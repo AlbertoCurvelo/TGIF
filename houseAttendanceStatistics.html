@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon"   href="assets/img/favicon.ico" type="image/png"/>
+  <title id="title">TGIF - Congress 113, house</title>
+</head>
+<body>
+  <header class="container px-3">
+    <div class="row d-flex justify-content-between align-items-center">
+      <div class="col">
+        <a class="logo" href="index.html"><img class="logo" src="assets/img/tgif_logo.png" alt=""></a>
+      </div>
+      <div class="col-auto email">
+        <a href="mailto:info@tgif.net"><img src="assets/img/email.png" alt=""></a>
+        <a href="mailto:info@tgif.net">info@tgif.net</a>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border border-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Congress 113</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="house-data.html">House</a></li>
+                <li><a class="dropdown-item" href="senate-data.html">Senate</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Attendance</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="houseAttendanceStatistics.html">House</a></li>
+                <li><a class="dropdown-item" href="senateAttendanceStatistics.html">Senate</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Party Loyalty</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="housePartyLoyalty.html">House</a></li>
+                <li><a class="dropdown-item" href="senatePartyLoyalty.html">Senate</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>    
+  </header>
+  <section id="houseAttendance" class="d-flex flex-column">
+      <div class="d-flex justify-content-between">
+        <div class="w-50">
+          <h2>Attendance</h2>
+          <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
+          <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>  
+        </div>
+        <div class="w-50 ps-5">
+          <h2 class="text-end">House at a glance</h2>
+          <table class="table text-center">
+              <thead class="m-5">
+                  <tr>
+                      <th>Party</th>
+                      <th>No. of Reps</th>
+                      <th>% Voted w/ Party</th>
+                  </tr>
+              </thead>
+              <tbody id="tablePartys">
+              </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="w-50 pe-2 text-center">
+          <h2 class="text-start">Least Engaged (Bottom 10% Attendance)</h2>
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Number of Missed Votes</th>
+                      <th>% Missed</th>
+                  </tr>
+              </thead>
+              <tbody id="tableLess">
+              </tbody>
+          </table>
+        </div>
+        <div class="w-50 ps-4 text-center">
+          <h2 class="text-start">Most Engaged (Top 10% Attendance)</h2>
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Number of Missed Votes</th>
+                      <th>% Missed</th>
+                  </tr>
+              </thead>
+              <tbody id="tableMost">
+              </tbody>
+          </table>
+        </div>
+      </div>
+  </section>
+  <footer class="py-3 m-3 d-flex justify-content-center text-center bg-light border border-dark">
+    <span>&#169 2016 TGIF | All Rights Reserved</span>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="js/pro-congress-113-house.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

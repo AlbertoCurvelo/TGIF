@@ -1,0 +1,115 @@
+/*Fuente*/
+@font-face{
+  font-family: linuxF;
+  src: url('../assets/font/LinLibertine_R.ttf');
+}
+*{
+  font-family: linuxF;
+}
+/*Bootstrap*/
+.bg-light{
+  background-color: #dfe9f0!important;
+}
+/*Armando el modelo*/
+header{
+  max-width: 100vw !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+.logo{
+  width: 15vw;
+  height: 6vw;
+  min-width: 150px;
+  min-height: 50px;
+  max-width: 230px;
+  max-height: 70px;
+}
+.email img{
+  width: 4vw;
+  height: 4vw;
+  max-width: 30px;
+  max-height: 30px;
+}
+.email a{
+  font-size: 1.2vw;
+}
+.nav-item{
+    padding-top: 1vw;
+  }
+.navbar-nav .nav-item a:hover{
+  background-color: lightgray;
+  color: black !important;
+  transition: 1s ease;
+}
+.nav-link{
+  color: blue !important;
+}
+.active{
+  background-color: lightgray;
+  color:black !important;
+}
+section{
+  margin: 4vh 3vw;
+}
+section p{
+text-indent: 2vw;
+}
+.imgDer{
+  padding: 0 2vw;
+  min-height: 200px;
+  height: 50vh;
+}
+.imgDer img{
+  width: 13vw;
+  height: 12vw;
+  max-width: 240px;
+  max-height: 200px;
+  min-width: 160px;
+  min-height: 140px;
+}
+/*Tabla*/
+table{
+  max-width: 1200px;
+  margin:auto
+}
+/*retoques*/
+@media(max-width:677px){
+  *{
+    font-size: 2.2vw;
+    }
+    .email a{
+      font-size: 2vw;
+    }
+}
+@media (min-width:678px) and (max-width:991px){
+   *{
+    font-size: 1.4vw;
+      } 
+    .email a{
+        font-size: 1.6vw;
+      }
+}
+@media (min-width:992px) and (max-width:1199px){
+  *{
+    font-size: 1.6vw;
+   } 
+  .navbar{
+    padding:0;
+  }
+  .nav-item{
+    padding-top: 0;
+    margin-left: 5px;
+    }
+}
+@media (min-width:1200px){
+  *{
+    font-size: 1.225vw;
+    } 
+  .navbar{
+    padding:0;
+    }
+   .nav-item{
+    padding-top: 0;
+    margin-left: 5px
+    }
+}
