@@ -1,5 +1,5 @@
 ## Demo
-If you want to see the demo of this project displayed, you can visit [TGIF Demo](https://curvelo-mytinerary.herokuapp.com/)
+If you want to see the demo of this project displayed, you can visit [TGIF Demo](https://albertocurvelo.github.io/TGIF/)
 
 ## Description
 Project: TGIF, carried out for evaluative purposes for the bootcamp provided by MindHub
